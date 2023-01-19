@@ -5,7 +5,7 @@
 }
 .container{
     display:grid;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 1fr 6fr;
 }
 .side-bar{
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -13,7 +13,6 @@
     background-color: #22d3ee;
     color:#fafaf9;
     justify-content: center;
-    padding: 15px;
     grid-row-start:1;
     grid-row-end:3;
 }
@@ -23,22 +22,33 @@
     gap:40px;
     list-style-type: none;
 }
-
+.avatar {
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
 .header{
     display:grid;
     background-color:green;
 }
-.searchbar{
+.searchbar-input{
    display:grid;
    height:25px;
-   width:300px;
-   border-radius:30px;
-   grid-column-start:2;
-   grid-column-end:4;
+   width:500px;
+   grid-column-start: 2;
+   margin-top:10px;
    grid-row-start:1;
-   grid-row-end:2;
-   margin-top:20px;
-   background-color:gray
+   background-color:gray;
+   border-radius: 20px;
+}
+.searchbar ul{
+    display:grid;
+    list-style-type: none;
+    grid-template-rows:1fr;
+    grid-template-columns: 1fr 1fr;
+    width:20%;
+    align-items: flex-start;
 }
 .profile{
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -52,26 +62,55 @@
     justify-content: center;
     gap:15px;
 }
+.profile ul{
+    display:grid;
+    gap:30px;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    list-style-type: none;
+}
 .bigger-profile{
     display:grid;
     grid-row-start:2;
-    grid-column-start:2;
+    grid-column-start:1;
 }
+.message{
+    display:grid;
+    justify-content:flex-start;
+    align-items:flex-start
+}
+.bigger-profile li{
+    display:grid;
+    width:20%
+}
+.bigger-profile ul{
+    display:grid;
+    grid-template-rows: 1fr;
+    grid-template-columns:1fr 2fr;
+    width:30%;
+    list-style-type: none;
+}
+
 .buttons{
     display:grid;
-    height:40px;
+    height:50px;
     grid-row-start: 2;
     grid-column-start:4;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-    gap:15px;
-
+    grid-template-rows: 3fr;
+    gap:30px;
+    text-align: center;
 }
 .header-button{
+    display:grid;
     border-radius: 20px;
+    text-align: center;
+    color:#FFFFFF;
+    background-color: #22d3ee;
 }
 .myprojects{
     font-weight: bold;
+    height: 20%;
 }
 .title{
     display:grid;
@@ -81,7 +120,8 @@
 .main-content{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:16px;
+    gap:10px;
+    background-color:chartreuse
 }
 .projects{
     display:grid;
@@ -89,6 +129,13 @@
     grid-template-columns:repeat(2,1fr);
     grid-column-start:1;
     grid-column-end:3;
+    gap:20px;
+}
+.title-annoucements{
+    display:flex;
+font-size: large;
+justify-content: center;
+align-items: center;
 }
 .annoucements{
     display:grid;
@@ -112,19 +159,26 @@
     grid-column-start: 1;
     grid-column-end:3;
     align-items: flex-start;
+    gap:20px;
 }
 .card
 {
     background-color: #FFFFFF;
     color: black;
     text-align: center;
-    height:100px;
+    height:200px;
+    border-radius: 50px;
+    gap:20px;
     }
 .card p {
         color: black;
         font-weight: normal;
         font-size: 14px;
         padding:5px;
+}
+.title-trending{
+    display:grid;
+    grid-column-start:3;
 }
 .trending{
 display:grid;
@@ -133,18 +187,26 @@ background-color: gray;
 border-radius: 25px;
 }
 .trending ul{
- display:grid;
-    align-items:center;
-    gap:20px;
+ display:grid;  
+ grid-template-rows: 1fr 1fr;
+ grid-template-columns:1fr 1fr ;
     list-style-type: none;
 }
+.trending li{
+    width:80px;
+    display:grid;
+     grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
+}
 .font{
-    font-size:20px;
+    color:silver;
+    font-size:10px;
     font-family:  system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; ;
+    text-align: center;
 }
 .text-divider {
     display: flex;
-    align-items: center; // align text and lines vertically
+    align-items: center;
   }
   
   .text-divider::before,
@@ -152,5 +214,33 @@ border-radius: 25px;
     content: '';
     height: 1px;
     background-color: silver;
-    flex-grow: 1; // both lines will expand to occupy the available space
-  }
+    flex-grow: 1
+    ;}
+.profile-pic {
+    vertical-align: middle;
+     width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.notification{
+    vertical-align: middle;
+    width: 40px;
+   height: 40px;
+   border-radius: 50%;
+}
+.dashboard{
+    font-size: 30px;
+    font-family: 'Courier New', Courier, monospace;
+    text-align:center;
+}
+.bigger-profile-pic {
+    vertical-align: middle;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+}
+.name{
+    color:black;
+    font-size:20px;
+    align-items: flex-end;
+}
